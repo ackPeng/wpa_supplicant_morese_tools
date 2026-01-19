@@ -13,6 +13,7 @@ include /usr/share/dpkg/architecture.mk
 
 override_dh_auto_clean:
 	dh_clean
+	$(MAKE) -C wpa_supplicant clean
 
 override_dh_auto_configure:
 	# Copy defconfig to .config and customize for cross-compilation
@@ -36,7 +37,7 @@ override_dh_auto_configure:
 	echo "CONFIG_INTERWORKING=y" >> wpa_supplicant/.config
 
 override_dh_auto_build:
-	# Build wpa_supplicant
+	# Build wpa_supplicant_s1g (the default target in this modified source)
 	$(MAKE) -C wpa_supplicant \
 		CC=aarch64-linux-gnu-gcc \
 		STRIP=aarch64-linux-gnu-strip \
@@ -50,13 +51,13 @@ override_dh_auto_install:
 	install -d $(CURDIR)/debian/tmp/usr/share/man/man8
 	install -d $(CURDIR)/debian/tmp/etc
 
-	# Install binaries
-	install -m 755 wpa_supplicant/wpa_supplicant \
-		$(CURDIR)/debian/tmp/usr/bin/
-	install -m 755 wpa_supplicant/wpa_cli \
-		$(CURDIR)/debian/tmp/usr/bin/
-	install -m 755 wpa_supplicant/wpa_passphrase \
-		$(CURDIR)/debian/tmp/usr/bin/
+	# Install binaries (s1g versions for this modified source)
+	install -m 755 wpa_supplicant/wpa_supplicant_s1g \
+		$(CURDIR)/debian/tmp/usr/bin/wpa_supplicant
+	install -m 755 wpa_supplicant/wpa_cli_s1g \
+		$(CURDIR)/debian/tmp/usr/bin/wpa_cli
+	install -m 755 wpa_supplicant/wpa_passphrase_s1g \
+		$(CURDIR)/debian/tmp/usr/bin/wpa_passphrase
 
 	# Install man pages
 	install -m 644 wpa_supplicant/doc/docbook/wpa_supplicant.8 \
