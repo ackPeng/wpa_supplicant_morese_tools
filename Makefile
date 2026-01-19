@@ -25,6 +25,7 @@ main_build_dep:
 		pkg-config \
 		libnl-3-dev:arm64 \
 		libnl-genl-3-dev:arm64 \
+		libnl-route-3-dev:arm64 \
 		libssl-dev:arm64 \
 		git-buildpackage \
 		devscripts \

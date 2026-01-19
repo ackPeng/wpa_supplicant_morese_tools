@@ -6,6 +6,7 @@ Build-Depends: debhelper-compat (= 13),
  quilt,
  libnl-3-dev:arm64,
  libnl-genl-3-dev:arm64,
+ libnl-route-3-dev:arm64,
  libssl-dev:arm64,
  pkg-config,
 Standards-Version: 4.6.2
