@@ -1,0 +1,7 @@
+usr/bin/wpa_supplicant
+usr/bin/wpa_cli
+usr/bin/wpa_passphrase
+usr/share/man/man1/wpa_cli.1
+usr/share/man/man1/wpa_passphrase.1
+usr/share/man/man8/wpa_supplicant.8
+etc/wpa_supplicant.conf
