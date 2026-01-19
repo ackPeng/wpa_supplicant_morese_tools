@@ -46,9 +46,6 @@ override_dh_auto_build:
 override_dh_auto_install:
 	# Install binaries to debian/tmp
 	install -d $(CURDIR)/debian/tmp/usr/bin
-	install -d $(CURDIR)/debian/tmp/usr/share/man/man1
-	install -d $(CURDIR)/debian/tmp/usr/share/man/man5
-	install -d $(CURDIR)/debian/tmp/usr/share/man/man8
 	install -d $(CURDIR)/debian/tmp/etc
 
 	# Install binaries (s1g versions for this modified source)
@@ -58,14 +55,6 @@ override_dh_auto_install:
 		$(CURDIR)/debian/tmp/usr/bin/wpa_cli
 	install -m 755 wpa_supplicant/wpa_passphrase_s1g \
 		$(CURDIR)/debian/tmp/usr/bin/wpa_passphrase
-
-	# Install man pages
-	install -m 644 wpa_supplicant/doc/docbook/wpa_supplicant.8 \
-		$(CURDIR)/debian/tmp/usr/share/man/man8/ 2>/dev/null || true
-	install -m 644 wpa_supplicant/doc/docbook/wpa_cli.1 \
-		$(CURDIR)/debian/tmp/usr/share/man/man1/ 2>/dev/null || true
-	install -m 644 wpa_supplicant/doc/docbook/wpa_passphrase.1 \
-		$(CURDIR)/debian/tmp/usr/share/man/man1/ 2>/dev/null || true
 	install -m 644 wpa_supplicant/wpa_supplicant.conf \
 		$(CURDIR)/debian/tmp/etc/wpa_supplicant.conf
 
