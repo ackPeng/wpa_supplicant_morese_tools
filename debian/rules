@@ -48,15 +48,15 @@ override_dh_auto_install:
 	install -d $(CURDIR)/debian/tmp/usr/bin
 	install -d $(CURDIR)/debian/tmp/etc
 
-	# Install binaries (s1g versions for this modified source)
+	# Install binaries with morse prefix (s1g versions for this modified source)
 	install -m 755 wpa_supplicant/wpa_supplicant_s1g \
-		$(CURDIR)/debian/tmp/usr/bin/wpa_supplicant
+		$(CURDIR)/debian/tmp/usr/bin/morse-wpa_supplicant
 	install -m 755 wpa_supplicant/wpa_cli_s1g \
-		$(CURDIR)/debian/tmp/usr/bin/wpa_cli
+		$(CURDIR)/debian/tmp/usr/bin/morse-wpa_cli
 	install -m 755 wpa_supplicant/wpa_passphrase_s1g \
-		$(CURDIR)/debian/tmp/usr/bin/wpa_passphrase
+		$(CURDIR)/debian/tmp/usr/bin/morse-wpa_passphrase
 	install -m 644 wpa_supplicant/wpa_supplicant.conf \
-		$(CURDIR)/debian/tmp/etc/wpa_supplicant.conf
+		$(CURDIR)/debian/tmp/etc/morse-wpa_supplicant.conf
 
 override_dh_builddeb:
 	mkdir -p $(CURDIR)/output

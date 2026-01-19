@@ -1,4 +1,4 @@
-usr/bin/wpa_supplicant
-usr/bin/wpa_cli
-usr/bin/wpa_passphrase
-etc/wpa_supplicant.conf
+usr/bin/morse-wpa_supplicant
+usr/bin/morse-wpa_cli
+usr/bin/morse-wpa_passphrase
+etc/morse-wpa_supplicant.conf
