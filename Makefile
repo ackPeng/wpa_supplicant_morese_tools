@@ -1,6 +1,6 @@
 -include .github/local/Makefile.local
 
-PROJECT ?= wpa_supplicant-rel_1_9_4_2023_Nov_02
+PROJECT ?= wpa-supplicant-morse-tools
 CUSTOM_DEBUILD_ENV ?= DEB_BUILD_OPTIONS='parallel=1'
 CUSTOM_DEBUILD_ARG ?=
 

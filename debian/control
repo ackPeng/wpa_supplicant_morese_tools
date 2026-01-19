@@ -1,4 +1,4 @@
-Source: wpa_supplicant-rel_1_9_4_2023_Nov_02
+Source: wpa-supplicant-morse-tools
 Section: net
 Priority: optional
 Maintainer: Radxa Computer Co., Ltd <dev@radxa.com>
@@ -12,7 +12,7 @@ Standards-Version: 4.6.2
 Homepage: https://w1.fi/wpa_supplicant/
 Rules-Requires-Root: no
 
-Package: wpa_supplicant-rel_1_9_4_2023_Nov_02
+Package: wpa-supplicant-morse-tools
 Architecture: arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: WPA Supplicant for WiFi authentication
